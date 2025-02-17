@@ -1,0 +1,132 @@
+/* Custom styles for the dashboard */
+.dashboard{
+  padding: 100px 0;
+  background: white;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: inherit;
+    text-align: left;
+    padding-top: 100px;
+  }
+  
+  main{
+    text-align: left;
+  }
+  .form-group{
+    margin-bottom: 10px;
+  }
+
+  .custom-file-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-control-file {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    margin-right: 10px;
+  }
+  
+  #file-name {
+    font-style: italic;
+    color: #999;
+  }
+
+  .ck-editor__editable{
+    height: 150px;
+  }
+
+  .accordion-item{
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .accordion-button{
+    background-color: transparent !important;
+    color: white !important;
+  }
+
+  .dashboard h3{
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    color: white !important;
+    padding: 10px;
+    font-size: 22px !important;
+  }
+
+  .nav-link{
+    cursor: pointer;
+  }
+
+  .sidebar-sticky .nav-item a{
+    margin: 8px 1rem;
+    font-weight: 400;
+    font-size: 14px !important;
+  }
+
+  .custom-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 155px;
+    padding: 10px;
+  }
+  
+  .custom-switch input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  .custom-switch .slider {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-switch input:checked + .slider {
+    background-color: #693dab;
+  }
+  
+  .custom-switch input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+  
+  .custom-switch-label {
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #343a40;
+  }
+  

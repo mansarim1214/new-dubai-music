@@ -1,0 +1,416 @@
+body.offcanvas-active {
+  overflow: hidden;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem !important;
+    background-color: #333;
+  }
+  #navbarNav{
+    justify-content: flex-end;
+  }
+ 
+  .navbar-dark{
+    z-index: 9999;
+  }
+  .nav-link{
+    list-style: none;
+    display: flex;
+
+  }
+  
+  .nav-item a{
+    margin: 16px 1rem;
+    position: relative;
+    padding: 5px 15px;
+    font-weight: 600;
+    
+  }
+
+  .navbar a{
+    letter-spacing: 1.3px;
+  }
+  .nav-item a::before{
+    position: absolute !important;
+    content: "" !important;
+    width: 0;
+    transform: skewX(-30deg);
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.3s;
+    display: block;
+    background-color: #693dab;
+    display: block;
+  }
+
+  .nav-item a:hover::before, .nav-item a.active::before{
+    width: 100%;
+    transform: skewX(-30deg) !important;
+  }
+  
+  .nav-link {
+    color: #fff !important;
+    font-size: 18px !important;
+  }
+
+
+
+  @media all and (max-width: 992px) {
+    
+    .nav-cont {
+      display: block !important;
+      padding-right: auto !important;
+      padding-left: auto !important;
+    }
+  
+    .navbar2 {
+      box-shadow: 0px 3px 17px #00000047;
+    }
+    #navbar_main {
+      box-shadow: 0px 3px 17px #00000047;
+    }
+    .dropdown-menu {
+      border: none;
+    }
+    .nav-item {
+      border-bottom: 1px solid #5a5a5a;
+      width: 85%;
+    }
+
+    .navbar{
+      padding: 0 12px !important;
+    }
+    .nav-link{
+      font-size: 14px !important;
+    }
+
+    .d-flex{
+      gap: 0 !important;
+    }
+    .sidebar-nav .social-icons{
+      margin-top: 20px;
+    }
+    
+  }
+  .sidebar-nav{
+    list-style-type: none;
+    width: 90%;
+
+  }
+
+  nav .navbar-toggler{
+    padding: 0 !important;
+    box-shadow: none;
+    border: 0 !important;
+  }
+  .social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+  }
+  .social-icons svg{
+    font-size: 27px;
+    background-color: #333333;
+    color: white;
+    padding: 6px;
+    border-radius: 100%;
+  }
+
+
+  .footer{
+    background-color: black;
+    color: white;
+  }
+
+
+
+  nav label{
+    display:flex;
+     flex-direction:column;
+
+     cursor:pointer;
+   }
+   
+   nav label span{
+     background: #fff;
+     border-radius:10px;
+     height:4px;
+     margin: 3px 0;
+     transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+   
+   }
+   
+   
+  nav span:nth-of-type(1){
+     width:50%;
+     
+   }
+   
+   nav span:nth-of-type(2){
+     width:100%;
+   }
+   
+   
+ nav  span:nth-of-type(3){
+     width:75%;
+    
+   }
+   
+   
+  nav input[type="checkbox"]{
+     display:none;
+   }
+   
+   
+   nav input[type="checkbox"]:checked ~ span:nth-of-type(1){
+     transform-origin:bottom;
+     transform:rotatez(45deg) translate(5px,0px)
+   }
+   
+   
+   nav input[type="checkbox"]:checked ~ span:nth-of-type(2){
+     
+     transform-origin:top;
+     transform:rotatez(-45deg)
+   }
+   
+   
+   nav input[type="checkbox"]:checked ~ span:nth-of-type(3){
+     
+     transform-origin:bottom;
+     width:50%;
+     transform:translate(17px,-4px) rotatez(45deg);
+   
+   }
+   
+
+  /* Hamburger Icon Styles */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1000; 
+}
+
+.bar {
+ 
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+.open .bar{
+  width: 100% ;
+}
+/* Transformations for the cross icon */
+.hamburger-icon.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Hide the checkbox used for toggling */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Sidebar & Overlay Styles */
+.screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.screen-overlay.show {
+  display: block;
+}
+
+.mobile-offcanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 100%;
+  background-color: #111;
+  z-index: 9999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-offcanvas.show {
+  transform: translateX(0);
+}
+
+.btn-close {
+  font-size: 24px;
+  z-index: 1;
+
+}
+.instant-btn{
+  position: relative;
+  z-index: 9;
+  color:white !important;
+  border: 0px !important;
+}
+.instant-btn a{
+  color: white !important;
+  border: 0;
+  font-weight: 600;
+  border: 0px !important;
+
+}
+.instant-btn::before{
+  position: absolute !important;
+  content: "" !important;
+  width: 100%;
+  transform: skewX(-30deg);
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 0.3s;
+  display: block;
+  background-color: #693dab;
+  display: block;
+}
+
+@media only screen and (max-width: 500px) {
+  .nav-item a{
+    position: relative;
+    padding: 5px 15px;
+    margin: 10px 1rem;
+    font-size: 16px;
+}
+
+.homeBtn{
+  font-size: 14px !important;
+}
+
+}
+
+.navbar ul{
+  margin-bottom: 0 !important;
+  list-style-type: none;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.navbar .d-flex{
+  gap: 25px;
+  align-items: center;
+}
+
+
+.sidebar-nav svg{
+  background-color: #693dab;
+}
+
+/* Custom Modal Styling */
+.modal-content {
+  background-color: #000 !important; /* Black background */
+  color: #fff !important; /* White text color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+}
+
+.modal-header {
+  border-bottom: none !important; /* Remove the bottom border */
+}
+
+.modal-title {
+  font-size:30px; /* Larger title font size */
+  font-weight: bold; /* Bold title text */
+  margin-top: -40px;
+}
+
+.modal-body {
+  padding: 20px 10px !important; /* Padding for the modal body */
+}
+
+.modal-footer {
+  border-top: none !important; /* Remove the top border */
+  justify-content: center !important; /* Align the button to the right */
+}
+
+
+
+.homeBtn {
+  background-color: #4e2a84;
+  border-color: transparent !important;
+  color: #fff !important;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.homeBtn:hover {
+  background-color: #4e2a84;
+}
+
+
+
+
+.modal-open{
+  padding-right: 0 !important;
+}
+
+.modal-backdrop{
+  z-index: 9 !important;
+  background-color: #ffffff3b !important;
+}
+#instantBookModal{
+  top: 15%;
+  padding-right: 0 !important;
+}
+
+.modal-dialog{
+  --bs-modal-width: 630px;
+}
+
+/* Custom CSS to make the modal close button white */
+.modal-header .btn-close {
+  filter: invert(1); /* Inverts colors, making dark elements light */
+}
+
+/* If you want to ensure it's pure white without inverting */
+.modal-header .btn-close {
+  background-color: transparent; /* Remove any background */
+  opacity: 1; /* Ensure full opacity */
+}
+
+.modal-header .btn-close::before {
+  color: white; /* Color of the close icon */
+}
+
+.offcanvas-header{
+  justify-content: flex-end;
+}
+
+.close{
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  padding: 0 10px;
+}
